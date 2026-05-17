@@ -1,121 +1,226 @@
-
 :root {
-    --bg-color: #f0f0f0;
-    --container-bg: transparent;
-    --text-color: #333;
-    --number-bg: #fff;
-    --number-border: #ccc;
-    --button-bg: #4CAF50;
-    --button-text: white;
+    --bg-color: #f8f9fa;
+    --container-bg: #ffffff;
+    --text-color: #212529;
+    --text-muted: #6c757d;
+    --number-bg: #ffffff;
+    --number-border: #dee2e6;
+    --button-bg: #007bff;
+    --button-hover: #0056b3;
+    --button-text: #ffffff;
+    --nav-bg: #ffffff;
+    --footer-bg: #343a40;
+    --footer-text: #ffffff;
 }
 
 body.dark-mode {
-    --bg-color: #1a1a1a;
-    --text-color: #f0f0f0;
-    --number-bg: #333;
-    --number-border: #555;
-    --button-bg: #45a049;
+    --bg-color: #121212;
+    --container-bg: #1e1e1e;
+    --text-color: #e9ecef;
+    --text-muted: #adb5bd;
+    --number-bg: #2d2d2d;
+    --number-border: #444;
+    --button-bg: #375a7f;
+    --button-hover: #2b4764;
+    --nav-bg: #1e1e1e;
+}
+
+* {
+    box-sizing: border-box;
 }
 
 body {
-    font-family: sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    margin: 0;
+    padding: 0;
     background-color: var(--bg-color);
     color: var(--text-color);
+    line-height: 1.6;
     transition: background-color 0.3s, color 0.3s;
+}
+
+header {
+    background-color: var(--nav-bg);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--button-bg);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
     margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.nav-links a:hover {
+    color: var(--button-bg);
 }
 
 .container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+}
+
+section {
+    padding: 3rem 0;
+}
+
+.hero-section {
     text-align: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.subtitle {
+    color: var(--text-muted);
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
 }
 
 .numbers {
     display: flex;
     justify-content: center;
-    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 2rem;
 }
 
 .number {
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
     background-color: var(--number-bg);
-    border: 2px solid var(--number-border);
+    border: 3px solid var(--number-border);
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 5px;
-    font-size: 20px;
+    font-size: 1.5rem;
     font-weight: bold;
-    color: var(--text-color);
-    transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
 }
 
-button {
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    border: none;
+.main-btn {
+    padding: 12px 30px;
+    font-size: 1.2rem;
+    font-weight: bold;
     background-color: var(--button-bg);
     color: var(--button-text);
-    border-radius: 5px;
-    margin: 10px;
-    transition: background-color 0.3s;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
 }
 
-#theme-toggle {
-    position: absolute;
-    top: 20px;
-    right: 20px;
+.main-btn:hover {
+    background-color: var(--button-hover);
+    transform: translateY(-2px);
+}
+
+.content-section h2 {
+    border-left: 5px solid var(--button-bg);
+    padding-left: 15px;
+    margin-bottom: 1.5rem;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: var(--number-border);
+    margin: 2rem 0;
 }
 
 .contact-section {
-    margin-top: 50px;
-    padding: 20px;
-    border-top: 1px solid var(--number-border);
-    text-align: left;
-    max-width: 400px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.contact-section h2 {
-    text-align: center;
-    margin-bottom: 20px;
+    background-color: var(--container-bg);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
 .form-group {
-    margin-bottom: 15px;
+    margin-bottom: 1.5rem;
 }
 
 .form-group label {
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 0.5rem;
     font-weight: bold;
 }
 
-.form-group input,
-.form-group textarea {
+.form-group input, .form-group textarea {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     border: 1px solid var(--number-border);
-    border-radius: 4px;
-    background-color: var(--number-bg);
+    border-radius: 5px;
+    background-color: var(--bg-color);
     color: var(--text-color);
-    font-family: inherit;
-    box-sizing: border-box;
 }
 
-.form-group textarea {
-    height: 100px;
-    resize: vertical;
-}
-
-form button[type="submit"] {
+.submit-btn {
     width: 100%;
-    margin: 0;
+    padding: 12px;
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+footer {
+    background-color: var(--footer-bg);
+    color: var(--footer-text);
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 5rem;
+}
+
+#theme-toggle {
+    padding: 8px 15px;
+    background: transparent;
+    border: 1px solid var(--button-bg);
+    color: var(--button-bg);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#theme-toggle:hover {
+    background: var(--button-bg);
+    color: var(--button-text);
+}
+
+.privacy-policy {
+    font-size: 0.9rem;
+    color: var(--text-muted);
 }

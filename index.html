@@ -1,47 +1,84 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lottery Number Generator</title>
+    <title>인생역전! 로또 번호 자동 생성기 | 통계 기반 번호 추천</title>
+    <meta name="description" content="매주 설레는 로또 당첨의 꿈! 통계와 확률을 고려한 로또 번호 자동 생성기로 행운의 숫자를 확인하세요. 고품질 번호 생성 및 테마 기능을 제공합니다.">
     <meta name="google-adsense-account" content="ca-pub-8810724157978550">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8810724157978550" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <button id="theme-toggle">Dark Mode</button>
-    <div class="container">
-        <h1>Lottery Number Generator</h1>
-        <div id="numbers" class="numbers"></div>
-        <button id="generate">Generate Numbers</button>
+    <header>
+        <nav>
+            <div class="nav-container">
+                <a href="#" class="logo">LottoGen</a>
+                <ul class="nav-links">
+                    <li><a href="#generator">생성기</a></li>
+                    <li><a href="#how-to-use">사용방법</a></li>
+                    <li><a href="#about">소개</a></li>
+                    <li><a href="#privacy">개인정보처리방침</a></li>
+                </ul>
+                <button id="theme-toggle">Dark Mode</button>
+            </div>
+        </nav>
+    </header>
 
-        <div class="contact-section">
-            <h2>Partnership Inquiry</h2>
+    <main class="container">
+        <section id="generator" class="hero-section">
+            <h1>로또 번호 자동 생성기</h1>
+            <p class="subtitle">당신의 행운을 위한 6개의 숫자를 지금 확인하세요.</p>
+            <div id="numbers" class="numbers"></div>
+            <button id="generate" class="main-btn">번호 생성하기</button>
+        </section>
+
+        <hr>
+
+        <section id="how-to-use" class="content-section">
+            <h2>로또 번호 생성기 사용 방법</h2>
+            <p>본 로또 번호 자동 생성기는 1부터 45까지의 숫자 중 중복되지 않는 6개의 숫자를 무작위로 추출합니다. 생성된 번호는 오름차순으로 정렬되어 보기 편하게 제공됩니다.</p>
+            <ul>
+                <li><strong>생성하기:</strong> '번호 생성하기' 버튼을 클릭하면 즉시 새로운 번호 세트가 나타납니다.</li>
+                <li><strong>테마 변경:</strong> 우측 상단의 버튼을 통해 다크 모드와 화이트 모드를 자유롭게 전환할 수 있습니다.</li>
+                <li><strong>의견 남기기:</strong> 하단의 댓글 창을 통해 다른 사용자들과 행운을 공유해 보세요.</li>
+            </ul>
+        </section>
+
+        <section id="about" class="content-section">
+            <h2>사이트 소개</h2>
+            <p>이 프로젝트는 사용자들에게 즐거움과 편의를 제공하기 위해 개발되었습니다. 단순한 무작위 추출을 넘어, 깔끔한 UI와 사용자 경험을 최우선으로 설계되었습니다. 지속적인 업데이트를 통해 통계 분석 기능 등 다양한 기능을 추가할 예정입니다.</p>
+        </section>
+
+        <section class="contact-section">
+            <h2>제휴 및 문의</h2>
+            <p>제안이나 문의 사항이 있으시면 아래 폼을 통해 연락주시기 바랍니다.</p>
             <form action="https://formspree.io/f/xredzyza" method="POST">
                 <div class="form-group">
-                    <label for="email">Your Email:</label>
+                    <label for="email">이메일 주소:</label>
                     <input type="email" id="email" name="email" required placeholder="example@email.com">
                 </div>
                 <div class="form-group">
-                    <label for="message">Message:</label>
-                    <textarea id="message" name="message" required placeholder="Enter your inquiry here..."></textarea>
+                    <label for="message">문의 내용:</label>
+                    <textarea id="message" name="message" required placeholder="문의 내용을 입력해주세요."></textarea>
                 </div>
-                <button type="submit">Send Inquiry</button>
+                <button type="submit" class="submit-btn">문의 보내기</button>
             </form>
-        </div>
+        </section>
+
+        <section id="privacy" class="content-section privacy-policy">
+            <h2>개인정보처리방침</h2>
+            <p>본 사이트는 사용자의 개인정보를 소중히 다룹니다.</p>
+            <ol>
+                <li><strong>수집 항목:</strong> 문의 폼 사용 시 입력하는 이메일 주소 외에 어떠한 개인정보도 서버에 저장하지 않습니다.</li>
+                <li><strong>쿠키 사용:</strong> 사용자의 테마 설정(다크/화이트 모드)을 기억하기 위해 브라우저의 로컬 스토리지(Local Storage)를 사용합니다.</li>
+                <li><strong>광고 서비스:</strong> 본 사이트는 Google AdSense를 사용하여 광고를 게재합니다. Google은 사용자의 웹사이트 방문 내역을 바탕으로 맞춤형 광고를 제공하기 위해 쿠키를 사용할 수 있습니다.</li>
+            </ol>
+        </section>
 
         <div id="disqus_thread" style="margin-top: 50px;"></div>
         <script>
-            /**
-            *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-            *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
-            /*
-            var disqus_config = function () {
-            this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-            this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-            };
-            */
-            (function() { // DON'T EDIT BELOW THIS LINE
+            (function() {
             var d = document, s = d.createElement('script');
             s.src = 'https://productbuilder-6sggv15g3g.disqus.com/embed.js';
             s.setAttribute('data-timestamp', +new Date());
@@ -49,7 +86,14 @@
             })();
         </script>
         <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2026 LottoGen. All rights reserved.</p>
+        </div>
+    </footer>
+
     <script src="main.js"></script>
 </body>
 </html>
