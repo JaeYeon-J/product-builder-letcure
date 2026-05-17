@@ -1,11 +1,32 @@
 
+:root {
+    --bg-color: #f0f0f0;
+    --container-bg: transparent;
+    --text-color: #333;
+    --number-bg: #fff;
+    --number-border: #ccc;
+    --button-bg: #4CAF50;
+    --button-text: white;
+}
+
+body.dark-mode {
+    --bg-color: #1a1a1a;
+    --text-color: #f0f0f0;
+    --number-bg: #333;
+    --number-border: #555;
+    --button-bg: #45a049;
+}
+
 body {
     font-family: sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: #f0f0f0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+    margin: 0;
 }
 
 .container {
@@ -22,14 +43,16 @@ body {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background-color: #fff;
-    border: 2px solid #ccc;
+    background-color: var(--number-bg);
+    border: 2px solid var(--number-border);
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 0 5px;
     font-size: 20px;
     font-weight: bold;
+    color: var(--text-color);
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s;
 }
 
 button {
@@ -37,7 +60,15 @@ button {
     font-size: 16px;
     cursor: pointer;
     border: none;
-    background-color: #4CAF50;
-    color: white;
+    background-color: var(--button-bg);
+    color: var(--button-text);
     border-radius: 5px;
+    margin: 10px;
+    transition: background-color 0.3s;
+}
+
+#theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
 }
