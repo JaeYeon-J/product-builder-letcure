@@ -1,23 +1,26 @@
-# Project Blueprint
+# LottoGen Project
 
 ## Overview
+LottoGen is a professional web application designed to provide users with a clean, intuitive interface for generating lottery numbers while offering statistical insights and educational content about lottery probabilities.
 
-A simple web application that generates random lottery numbers.
+## AdSense Approval Optimization (Implemented)
+To meet Google AdSense's high-quality content standards, the site has been enriched with:
+- **Scientific Analysis:** Detailed sections on odd/even ratios, sum ranges, and consecutive numbers.
+- **Comprehensive FAQ:** Addressing user concerns and technical details.
+- **Professional Legal Pages:** Comprehensive Privacy Policy and Terms of Service.
+- **Responsible Gambling Information:** Promoting healthy gaming habits.
+- **Rich UI/UX:** Mobile-responsive design, dark mode, and interactive elements.
 
-## Implemented Features
+## Features
+- **Smart Number Generation:** Random 6 numbers (1-45) with statistical summary (sum, odd/even).
+- **Statistical Strategy Guide:** Educational content on lottery patterns.
+- **Interactive FAQ:** Accordion-style help section.
+- **Dual Theme Support:** Dark and Light modes with persistent settings.
+- **Contact System:** Integrated with Formspree for user feedback.
+- **Social Engagement:** Disqus integration for community discussion.
 
-*   **UI:**
-    *   A clean and modern user interface.
-    *   A button to generate new numbers.
-    *   A display area for the generated numbers.
-*   **Functionality:**
-    *   Generates 6 unique random numbers between 1 and 45.
-
-## Current Task: Initial Setup
-
-### Plan
-
-1.  **Create `blueprint.md`:** Document the project's purpose and features.
-2.  **Modify `index.html`:** Set up the basic HTML structure for the lottery number generator.
-3.  **Modify `style.css`:** Add styles for the elements in `index.html`.
-4.  **Modify `main.js`:** Implement the JavaScript logic to generate and display the lottery numbers.
+## Technical Stack
+- **HTML5:** Semantic structure for SEO.
+- **CSS3:** Custom properties (variables), Grid, Flexbox, and Animations.
+- **JavaScript (ES6+):** Vanilla logic for generation, stats, and UI interactivity.
+- **Font Awesome:** Professional iconography.

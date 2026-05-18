@@ -15,85 +15,153 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag("js", new Date());
-
       gtag("config", "G-6B1BBWVLK5");
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>인생역전! 로또 번호 자동 생성기 | 통계 기반 번호 추천</title>
-    <meta name="description" content="매주 설레는 로또 당첨의 꿈! 통계와 확률을 고려한 로또 번호 자동 생성기로 행운의 숫자를 확인하세요. 고품질 번호 생성 및 테마 기능을 제공합니다.">
+    <title>LottoGen | 과학적 통계 기반 로또 번호 생성 및 분석 가이드</title>
+    <meta name="description" content="매주 반복되는 로또 번호 선택의 고민, LottoGen이 해결해 드립니다. 단순 무작위 추출을 넘어 수학적 확률과 통계적 배합을 고려한 번호 생성 및 당첨 확률을 높이는 전략 가이드를 제공합니다.">
     <meta name="google-adsense-account" content="ca-pub-8810724157978550">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8810724157978550" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <header>
         <nav>
             <div class="nav-container">
-                <a href="#" class="logo">LottoGen</a>
+                <a href="#" class="logo">Lotto<span>Gen</span></a>
                 <ul class="nav-links">
                     <li><a href="#generator">생성기</a></li>
-                    <li><a href="#how-to-use">사용방법</a></li>
+                    <li><a href="#strategy">당첨 전략</a></li>
+                    <li><a href="#faq">자주 묻는 질문</a></li>
                     <li><a href="#about">소개</a></li>
-                    <li><a href="#privacy">개인정보처리방침</a></li>
                 </ul>
-                <button id="theme-toggle">Dark Mode</button>
+                <button id="theme-toggle" class="theme-btn"><i class="fas fa-moon"></i></button>
             </div>
         </nav>
     </header>
 
     <main class="container">
+        <!-- Generator Section -->
         <section id="generator" class="hero-section">
-            <h1>로또 번호 자동 생성기</h1>
-            <p class="subtitle">당신의 행운을 위한 6개의 숫자를 지금 확인하세요.</p>
-            <div id="numbers" class="numbers"></div>
-            <button id="generate" class="main-btn">번호 생성하기</button>
-        </section>
-
-        <hr>
-
-        <section id="how-to-use" class="content-section">
-            <h2>로또 번호 생성기 사용 방법</h2>
-            <p>본 로또 번호 자동 생성기는 1부터 45까지의 숫자 중 중복되지 않는 6개의 숫자를 무작위로 추출합니다. 생성된 번호는 오름차순으로 정렬되어 보기 편하게 제공됩니다.</p>
-            <ul>
-                <li><strong>생성하기:</strong> '번호 생성하기' 버튼을 클릭하면 즉시 새로운 번호 세트가 나타납니다.</li>
-                <li><strong>테마 변경:</strong> 우측 상단의 버튼을 통해 다크 모드와 화이트 모드를 자유롭게 전환할 수 있습니다.</li>
-                <li><strong>의견 남기기:</strong> 하단의 댓글 창을 통해 다른 사용자들과 행운을 공유해 보세요.</li>
-            </ul>
-        </section>
-
-        <section id="about" class="content-section">
-            <h2>사이트 소개</h2>
-            <p>이 프로젝트는 사용자들에게 즐거움과 편의를 제공하기 위해 개발되었습니다. 단순한 무작위 추출을 넘어, 깔끔한 UI와 사용자 경험을 최우선으로 설계되었습니다. 지속적인 업데이트를 통해 통계 분석 기능 등 다양한 기능을 추가할 예정입니다.</p>
-        </section>
-
-        <section class="contact-section">
-            <h2>제휴 및 문의</h2>
-            <p>제안이나 문의 사항이 있으시면 아래 폼을 통해 연락주시기 바랍니다.</p>
-            <form action="https://formspree.io/f/xredzyza" method="POST">
-                <div class="form-group">
-                    <label for="email">이메일 주소:</label>
-                    <input type="email" id="email" name="email" required placeholder="example@email.com">
+            <div class="hero-content">
+                <h1>인생 역전의 꿈, <br><span>스마트한 번호 조합</span>에서 시작됩니다.</h1>
+                <p class="subtitle">무작위 추출 시스템을 통해 생성된 행운의 6개 숫자를 확인하세요. <br>매주 업데이트되는 통계적 관점을 기반으로 최적의 조합을 제안합니다.</p>
+                <div id="numbers" class="numbers">
+                    <!-- Numbers will be generated here -->
                 </div>
-                <div class="form-group">
-                    <label for="message">문의 내용:</label>
+                <div id="stats-summary" class="stats-summary">
+                    <!-- Stats will appear here -->
+                </div>
+                <button id="generate" class="main-btn">행운의 번호 생성하기 <i class="fas fa-magic"></i></button>
+            </div>
+        </section>
+
+        <!-- Strategy Section -->
+        <section id="strategy" class="content-section">
+            <div class="section-title">
+                <h2>로또 당첨 확률과 과학적 분석</h2>
+                <p>단순한 운을 넘어, 확률의 원리를 이해하면 로또가 더 즐거워집니다.</p>
+            </div>
+            <div class="grid-container">
+                <article class="card">
+                    <div class="card-icon"><i class="fas fa-chart-pie"></i></div>
+                    <h3>홀짝 비율의 조화</h3>
+                    <p>로또 당첨 번호의 통계를 살펴보면 홀수와 짝수의 비율이 3:3 또는 2:4, 4:2인 경우가 전체의 약 80% 이상을 차지합니다. 극단적인 조합(모두 홀수 혹은 모두 짝수)보다는 균형 잡힌 배합이 유리할 수 있습니다.</p>
+                </article>
+                <article class="card">
+                    <div class="card-icon"><i class="fas fa-balance-scale"></i></div>
+                    <h3>총합 구간의 법칙</h3>
+                    <p>당첨 번호 6개의 숫자를 모두 더했을 때, 보통 100에서 170 사이의 구간에서 당첨 번호가 가장 많이 배출됩니다. LottoGen은 이러한 합계 범위를 고려하여 사용자에게 더 균형 있는 번호를 제안합니다.</p>
+                </article>
+                <article class="card">
+                    <div class="card-icon"><i class="fas fa-layer-group"></i></div>
+                    <h3>연속 번호의 출현</h3>
+                    <p>두 개 이상의 숫자가 연속해서 나오는 경우(예: 14, 15)는 의외로 빈번하게 발생합니다. 당첨 번호 데이터의 약 절반 정도에서 최소 하나의 연번이 포함되므로 이를 무조건 배제할 필요는 없습니다.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="content-section">
+            <div class="section-title">
+                <h2>자주 묻는 질문 (FAQ)</h2>
+                <p>LottoGen 서비스와 로또 확률에 대해 궁금한 점을 해결해 드립니다.</p>
+            </div>
+            <div class="accordion">
+                <div class="accordion-item">
+                    <button class="accordion-header">LottoGen의 번호 생성 알고리즘은 무엇인가요? <i class="fas fa-chevron-down"></i></button>
+                    <div class="accordion-content">
+                        <p>LottoGen은 JavaScript의 암호학적으로 안전한 난수 생성기(Crypto.getRandomValues) 또는 Math.random을 기반으로 중복 없는 6개의 숫자를 추출합니다. 또한, 생성된 번호의 홀짝 비율과 합계를 분석하여 사용자에게 참고 지표를 제공합니다.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header">여기서 생성된 번호로 정말 당첨될 수 있나요? <i class="fas fa-chevron-down"></i></button>
+                    <div class="accordion-content">
+                        <p>로또는 매 회차 독립적인 확률(약 814만 분의 1)을 가집니다. LottoGen은 사용자의 편의를 돕는 도구일 뿐 당첨을 보장하지 않습니다. 하지만 통계적으로 빈도가 높은 조합을 시도해보는 즐거움을 제공합니다.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header">이 서비스는 유료인가요? <i class="fas fa-chevron-down"></i></button>
+                    <div class="accordion-content">
+                        <p>아니요, LottoGen은 모든 사용자에게 100% 무료로 제공됩니다. 사이트 유지를 위해 최소한의 광고가 게재될 수 있으나, 번호 생성 및 분석 서비스에 대한 비용 청구는 절대 하지 않습니다.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header">로또 당첨 확률을 높이는 가장 좋은 방법은? <i class="fas fa-chevron-down"></i></button>
+                    <div class="accordion-content">
+                        <p>수학적으로 로또 당첨 확률을 높이는 유일한 방법은 '더 많은 조합을 구매하는 것'입니다. 하지만 이는 과도한 지출로 이어질 수 있으므로, 본인의 경제적 범위 내에서 소액으로 꾸준히 즐기는 것이 가장 건강한 방법입니다.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About & News Section -->
+        <section id="about" class="content-section info-section">
+            <div class="info-grid">
+                <div class="about-text">
+                    <h2>LottoGen 프로젝트 소개</h2>
+                    <p>우리는 로또를 단순한 도박이 아닌, 일주일의 설렘을 주는 '작은 희망'으로 정의합니다. LottoGen은 복잡한 번호 선택 과정을 즐거운 경험으로 바꾸기 위해 시작되었습니다.</p>
+                    <p>사용자 중심의 UI와 투명한 알고리즘을 통해, 누구나 쉽고 편하게 로또 조합을 연구하고 생성할 수 있는 환경을 제공하는 것이 우리의 목표입니다.</p>
+                </div>
+                <div class="responsible-gaming">
+                    <h3><i class="fas fa-hand-holding-heart"></i> 건전한 복권 문화</h3>
+                    <p>복권은 소액으로 즐기는 오락입니다. 지나친 몰입은 가계 경제에 해가 될 수 있습니다. 도움이 필요하신 분은 아래 기관을 이용해 주세요.</p>
+                    <ul>
+                        <li>동행복권 건전구매 캠페인</li>
+                        <li>도박문제 상담: 국번없이 1336</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact & Legal -->
+        <section class="legal-section">
+            <div class="legal-grid">
+                <div id="privacy" class="legal-item">
+                    <h3>개인정보처리방침</h3>
+                    <p>LottoGen은 사용자의 개인정보를 저장하거나 수집하지 않습니다. 문의 폼을 통해 제공된 이메일은 오직 문의 답변 목적으로만 사용되며, 브라우저 로컬 스토리지에 저장되는 다크모드 설정값 외의 쿠키는 Google AdSense 및 분석 도구에 의해서만 관리됩니다.</p>
+                </div>
+                <div id="terms" class="legal-item">
+                    <h3>이용약관</h3>
+                    <p>본 사이트의 서비스는 참고용일 뿐이며, 실제 당첨 결과에 대한 책임을 지지 않습니다. 모든 번호 선택과 구매 결정의 주체는 사용자 본인에게 있습니다. 타인의 명의를 도용하거나 불법적인 목적으로 서비스를 이용하는 행위를 금합니다.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-area">
+            <h2>제휴 및 문의</h2>
+            <form action="https://formspree.io/f/xredzyza" method="POST" class="contact-form">
+                <div class="input-group">
+                    <input type="email" id="email" name="email" required placeholder="이메일 주소를 입력하세요">
                     <textarea id="message" name="message" required placeholder="문의 내용을 입력해주세요."></textarea>
                 </div>
-                <button type="submit" class="submit-btn">문의 보내기</button>
+                <button type="submit" class="submit-btn">문의 내용 전송하기</button>
             </form>
         </section>
 
-        <section id="privacy" class="content-section privacy-policy">
-            <h2>개인정보처리방침</h2>
-            <p>본 사이트는 사용자의 개인정보를 소중히 다룹니다.</p>
-            <ol>
-                <li><strong>수집 항목:</strong> 문의 폼 사용 시 입력하는 이메일 주소 외에 어떠한 개인정보도 서버에 저장하지 않습니다.</li>
-                <li><strong>쿠키 사용:</strong> 사용자의 테마 설정(다크/화이트 모드)을 기억하기 위해 브라우저의 로컬 스토리지(Local Storage)를 사용합니다.</li>
-                <li><strong>광고 서비스:</strong> 본 사이트는 Google AdSense를 사용하여 광고를 게재합니다. Google은 사용자의 웹사이트 방문 내역을 바탕으로 맞춤형 광고를 제공하기 위해 쿠키를 사용할 수 있습니다.</li>
-            </ol>
-        </section>
-
-        <div id="disqus_thread" style="margin-top: 50px;"></div>
+        <div id="disqus_thread"></div>
         <script>
             (function() {
             var d = document, s = d.createElement('script');
@@ -102,12 +170,19 @@
             (d.head || d.body).appendChild(s);
             })();
         </script>
-        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     </main>
 
     <footer>
         <div class="footer-container">
-            <p>&copy; 2026 LottoGen. All rights reserved.</p>
+            <div class="footer-info">
+                <p class="footer-logo">LottoGen</p>
+                <p>&copy; 2026 LottoGen. All rights reserved. | <a href="#privacy">Privacy</a> | <a href="#terms">Terms</a></p>
+            </div>
+            <div class="footer-social">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
         </div>
     </footer>
 
