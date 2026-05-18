@@ -91,3 +91,64 @@ accordionHeaders.forEach(header => {
 // Initialization
 initTheme();
 generateAndDisplayNumbers();
+
+// SNS Sharing Logic
+const KAKAO_API_KEY = 'YOUR_KAKAO_JS_KEY'; // 사용자가 나중에 직접 넣어야 함
+
+if (typeof Kakao !== 'undefined' && !Kakao.isInitialized()) {
+    try {
+        // Kakao.init(KAKAO_API_KEY); // 주석 처리하여 에러 방지
+    } catch (e) {
+        console.error('Kakao SDK Init Error:', e);
+    }
+}
+
+const shareTitle = 'LottoGen | 이번 주 로또 번호는?';
+const shareDesc = '과학적 통계와 무작위 추출로 생성된 로또 번호, 지금 바로 확인하고 1등의 주인공이 되세요!';
+const shareUrl = window.location.href;
+
+// Kakao Share
+document.getElementById('share-kakao').addEventListener('click', () => {
+    if (typeof Kakao !== 'undefined' && Kakao.isInitialized()) {
+        Kakao.Share.sendDefault({
+            objectType: 'feed',
+            content: {
+                title: shareTitle,
+                description: shareDesc,
+                imageUrl: 'https://images.unsplash.com/photo-1518458028785-8fbcd101ebb9?q=80&w=500&auto=format&fit=crop',
+                link: {
+                    mobileWebUrl: shareUrl,
+                    webUrl: shareUrl,
+                },
+            },
+            buttons: [
+                {
+                    title: '번호 생성하러 가기',
+                    link: {
+                        mobileWebUrl: shareUrl,
+                        webUrl: shareUrl,
+                    },
+                },
+            ],
+        });
+    } else {
+        alert('카카오 공유를 사용하려면 Kakao JavaScript 키 설정이 필요합니다.');
+    }
+});
+
+// Facebook Share
+document.getElementById('share-facebook').addEventListener('click', () => {
+    window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`, 'facebook-share-dialog', 'width=800,height=600');
+});
+
+// Twitter Share
+document.getElementById('share-twitter').addEventListener('click', () => {
+    window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(shareTitle + '\n' + shareDesc)}&url=${encodeURIComponent(shareUrl)}`, 'twitter-share-dialog', 'width=800,height=600');
+});
+
+// Copy URL
+document.getElementById('copy-url').addEventListener('click', () => {
+    navigator.clipboard.writeText(shareUrl).then(() => {
+        alert('사이트 주소가 복사되었습니다. 친구들에게 공유해보세요!');
+    });
+});

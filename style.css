@@ -176,6 +176,41 @@ h1 span {
     color: var(--secondary-color);
 }
 
+.action-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.share-group {
+    display: flex;
+    gap: 10px;
+}
+
+.share-btn {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    color: white;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.share-btn:hover {
+    transform: scale(1.1);
+}
+
+.share-btn.kakao { background-color: #FEE500; color: #3C1E1E; }
+.share-btn.facebook { background-color: #1877F2; }
+.share-btn.twitter { background-color: #1DA1F2; }
+.share-btn.copy { background-color: #6c757d; }
+
 .main-btn {
     padding: 1rem 2.5rem;
     font-size: 1.2rem;
